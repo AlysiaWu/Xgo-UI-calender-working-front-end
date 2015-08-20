@@ -133,10 +133,10 @@ var myApp = angular.module('myApp', ['ngRoute', 'ui.calendar']);
         })
       }
 
-      factory.addAvailabilities = function(id, availabilities, callback){
-        console.log("factory", availabilities);
+      factory.addAvailabilities = function(id, new_val, callback){
+        console.log("factory", new_val);
          console.log("id", id);
-        $http.post("/addAvailabilities/"+id, availabilities).success(function(availabilities){
+        $http.post("/addAvailabilities/"+id, new_val).success(function(availabilities){
           console.log("success", availabilities);
           callback(availabilities);
         })

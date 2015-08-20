@@ -21,12 +21,12 @@ module.exports = function(app) {
   });
   app.post('/login', function (req, res) {
     // console.log(req.body);
-    passport.authenticate('local');
+    // passport.authenticate('local');
     travellers.login(req, res);
   });
    app.post('/loginG', function (req, res) {
     // console.log(req.body);
-     passport.authenticate('local');
+     // passport.authenticate('local');
     guides.login(req, res);
   });
 

@@ -9,7 +9,7 @@ mainfactory.getGuide($routeParams.id, function(data){
 //   $scope.eventSources.push($scope.guide.availabilities[i]);
 // }
     // $scope.eventSources = [];
-//  $scope.eventSources=[$scope.guide.availabilities];
+ $scope.availabilities=$scope.guide.availabilities;
 
 // console.log("scope.eventSources", $scope.eventSources);
 
@@ -163,37 +163,37 @@ $scope.uiconfig = {
 
 };
 
-// $scope.uiconfig.calendar.select=function(start, end, allDay){
-//       console.log("slect");
-//        var title = prompt('Event Title:');
-//            // console.log("haha");
-//            $scope.events=[];
-//           if (title) {
-//               // $scope.$apply(function(){
-//                   $scope.events.push({
-//                       title: title,
-//                       start: start,
-//                       end: end
-//                       // allDay: allDay
-//                   });
-//                   console.log("scope.events", $scope.events);
-
-//               // });
-//           };
-//       $scope.eventSources=[$scope.events];
-//       mainfactory.addAvailabilities($routeParams.id, $scope.events, function(availabilities){
-//         // $scope.eventSources = [];
-//        $scope.eventSources.push(availabilities);
-//             console.log("agular ", availabilities);
-//              console.log("paramsID ", $routeParams.id);
-//             // $scope.events=[];
-
-//       })
-
-// }
+$scope.uiconfig.calendar.select=function(start, end, allDay){
+      console.log("slect");
+       var title = prompt('Event Title:');
+           // console.log("haha");
+           $scope.events=[];
+          if (title) {
+              // $scope.$apply(function(){
+                  $scope.events.push({
+                      title: title,
+                      start: start,
+                      end: end
+                      // allDay: allDay
+                  });
+                  console.log("scope.events", $scope.events);
+        $scope.eventSources.push($scope.events);
+          $scope.events=[]
+              // });
+          };
+      // $scope.eventSources=[$scope.events];
 
 
+}
+$scope.addAvailabilities = function(){
+  mainfactory.addAvailabilities($routeParams.id, $scope.new_aval, function(availabilities){
 
+            console.log("agular ", availabilities);
+             console.log("paramsID ", $routeParams.id);
+            $scope.availabilities=availabilities;
+
+      })
+};
     $scope.review = {};
     $scope.addR = function(){
       console.log($scope.review);

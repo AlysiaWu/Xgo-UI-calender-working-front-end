@@ -72,7 +72,7 @@ addAvailabilities: function(req,res){
 	// Guide.findById(req.params.id, function(err, info) {
     // if (err) return res.send("contact create error: " + err);
 
-    Guide.update({_id: req.params.id}, {$push: {"availabilities": req.body[0]}}, function(err, info) {
+    Guide.update({_id: req.params.id}, {$push: {"availabilities": req.body}}, function(err, info) {
       if (err) return res.send("contact addMsg error: " + err);
       // console.log('The number of updated documents was %d', numAffected);
       // console.log('The raw response from Mongo was ', rawResponse);
